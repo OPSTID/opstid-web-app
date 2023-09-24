@@ -126,6 +126,13 @@ import {
     IonPopover,
     IonBackButton,
     IonContent,
+    IonList,
+    IonItem,
+    IonLabel,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonIcon
 
 } from "@ionic/vue"
 import { ellipse, ellipsisHorizontal } from "ionicons/icons";

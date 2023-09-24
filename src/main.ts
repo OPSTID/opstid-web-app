@@ -1,10 +1,8 @@
-import { createApp, Plugin } from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router';
 
 import { IonicVue } from '@ionic/vue';
-
-import "@splidejs/vue-splide/css"
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/vue/css/core.css';
@@ -31,6 +29,9 @@ import './theme/variables.css';
 /* Import Customized CSS */
 import "./theme/app.css"
 
+/* Import Custom lib */
+import ionToolbarResponsive from './lib/ion-toolbar-responsive';
+
 const app = createApp(App)
   .use(IonicVue, {
     mode: "ios"
@@ -40,3 +41,6 @@ const app = createApp(App)
 router.isReady().then(() => {
   app.mount('#app');
 });
+
+// run ion toolbar responsive
+ionToolbarResponsive()
