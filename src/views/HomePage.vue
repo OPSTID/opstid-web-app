@@ -81,6 +81,7 @@
         </ion-row>
       </ion-grid>
     </ion-content>
+  <ion-alert header="バックアップ" sub-header="前回のバックアップから30日以上経過しました" message="OPSTIDのデータはこの端末内のみに保存されています。端末の故障・紛失やデータ消失に備えてバックアップをダウンロードし、クラウドストレージに保存しましょう。この処理により通信が発生することはありません。" :is-open="state.isActive.backupAlert" :buttons="['今はしない','ダウンロード']" translucent></ion-alert>
   </ion-page>
 </template>
 
@@ -106,7 +107,8 @@ import {
   IonSpinner,
   IonRefresher,
   IonRefresherContent,
-  IonChip
+  IonChip,
+  IonAlert
 } from '@ionic/vue';
 
 import { RefresherCustomEvent } from '@ionic/vue';
@@ -122,6 +124,14 @@ import {
   pricetagOutline,
 bookmarkOutline
 } from "ionicons/icons"
+
+import { reactive } from "vue"
+
+const state = reactive({
+  isActive:{
+    backupAlert:false
+  }
+})
 
 const refresh = (event: RefresherCustomEvent) => {
   setTimeout(() => { event.target.complete() }, 1000)

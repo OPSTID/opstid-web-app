@@ -1,5 +1,6 @@
-body{
+html, body{
     user-select: none;
+    overscroll-behavior-x: none;
 }
 
 .container{
@@ -54,4 +55,8 @@ body{
 
 ion-grid{
     max-width:750px;
+}
+
+.markdown-body{
+    font-family: "system-ui", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

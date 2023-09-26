@@ -109,14 +109,18 @@ const launchCamera = async () => {
         // access to device camera
         const mediaStream = await navigator.mediaDevices.getUserMedia({
             video: {
-                facingMode: "environment"
+                facingMode: "environment",
+                width: window.screen.width > window.screen.height ? window.screen.width : window.screen.height,
+                height: window.screen.width > window.screen.height ? window.screen.height : window.screen.width
             }
         });
         // create video element to draw the video
         const video: HTMLVideoElement = document.createElement("video")
         // get the canvas element to capture qrcode
         const canvas: HTMLCanvasElement = <HTMLCanvasElement>document.querySelector("canvas#o-qr-reader-canvas")
-        const canvasContext = <CanvasRenderingContext2D>canvas.getContext("2d")
+        const canvasContext = <CanvasRenderingContext2D>canvas.getContext("2d",{
+            willReadFrequently: true
+        })
 
         // code from https://cozmo.github.io/jsQR/
         const drawLine = (begin: Point, end: Point, color: string) => {
