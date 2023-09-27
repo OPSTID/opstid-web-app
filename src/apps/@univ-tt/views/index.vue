@@ -31,14 +31,14 @@
                     <ion-icon :icon="gridOutline" slot="start"></ion-icon>
                     <strong style="font-size:1.2em">時間割を確認・編集</strong>
                 </ion-button>
-                <ion-list style="margin-top:-0.5em">
+                <ion-list style="margin-top:-0.5em" lines="none">
                     <ion-list-header>
                         <ion-label>
                             <h2 class="font-weight-bold">課題</h2>
-                            <p class="font-weight-normal">課題をまとめて確認しよう👍</p>
+                            <p class="font-weight-normal">直近7日以内に締切の課題一覧</p>
                         </ion-label>
                         <ion-button size="small" style="margin-bottom:1.5em">
-                            完了済み
+                            すべて表示
                             <ion-icon :icon="chevronForward" slot="end"></ion-icon>
                         </ion-button>
                     </ion-list-header>
@@ -51,6 +51,20 @@
                             <ion-icon slot="start" :icon="checkmark"></ion-icon>
                             完了としてマーク
                         </ion-button>
+                    </ion-item>
+                </ion-list>
+                <ion-list style="margin-top:1em" lines="none">
+                    <ion-list-header>
+                        <ion-label>
+                            <h2 class="font-weight-bold">管理</h2>
+                        </ion-label>
+                    </ion-list-header>
+                    <ion-item button>
+                        <ion-icon :icon="listOutline" slot="start"></ion-icon>
+                        <ion-label>
+                            <h2>保存した時間割</h2>
+                            <p>保存した時間割を一覧で確認できます</p>
+                        </ion-label>
                     </ion-item>
                 </ion-list>
 
@@ -86,7 +100,7 @@ import {
     IonLabel,
     IonFooter
 } from "@ionic/vue"
-import { calendarClearOutline, checkmark, chevronForward, gridOutline, school } from "ionicons/icons";
+import { calendarClearOutline, checkmark, chevronForward, gridOutline, listOutline, school } from "ionicons/icons";
 
 
 const state = reactive({

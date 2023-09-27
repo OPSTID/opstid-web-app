@@ -1,10 +1,13 @@
 <template>
   <ion-page>
-    <ion-header translucent>
+    <ion-header translucent class="ion-no-border">
       <ion-toolbar>
         <ion-buttons slot="start"></ion-buttons>
         <ion-title>ホーム</ion-title>
         <ion-buttons slot="end">
+          <ion-button id="o-profile-button">
+            <ion-icon slot="icon-only" :icon="personCircleOutline"></ion-icon>
+          </ion-button>
           <ion-button router-link="/settings">
             <ion-icon slot="icon-only" :icon="settingsOutline"></ion-icon>
           </ion-button>
@@ -40,15 +43,15 @@
               </ion-button>
             </div>
             <div>
-              <ion-chip>
+              <ion-chip router-link="/@tags/統計の数理Ⅱ">
                 <ion-icon :icon="bookmarkOutline"></ion-icon>
                 <ion-label>統計の数理Ⅱ</ion-label>
               </ion-chip>
-              <ion-chip color="primary">
+              <ion-chip color="primary" router-link="/@tags/アカペラ部">
                 <ion-icon :icon="bookmarkOutline"></ion-icon>
-                <ion-label>VoxBox</ion-label>
+                <ion-label>アカペラ部</ion-label>
               </ion-chip>
-              <ion-chip color="tertiary">
+              <ion-chip color="tertiary" router-link="/@tags/バイト">
                 <ion-icon :icon="bookmarkOutline"></ion-icon>
                 <ion-label>バイト</ion-label>
               </ion-chip>
@@ -57,7 +60,7 @@
             <div class="container" v-if="false">
               <ion-spinner name="lines"></ion-spinner>
             </div>
-            <ion-list>
+            <ion-list lines="none">
               <ion-list-header>
                 <ion-label>
                   <h2 class="font-weight-bold">To-do</h2>
@@ -69,7 +72,7 @@
                   <ion-icon slot="end" :icon="chevronForward"></ion-icon>
                 </ion-button>
               </ion-list-header>
-              <ion-item>
+              <ion-item router-link="/@univ-tt" button>
                 <ion-label>
                   <h2 class="font-weight-bold">統計の数理Ⅱ</h2>
                   <p>月曜日 3時限目</p>
@@ -81,6 +84,24 @@
         </ion-row>
       </ion-grid>
     </ion-content>
+    <ion-popover trigger="o-profile-button" trigger-action="click">
+      <ion-list lines="none">
+        <div class="ion-text-center ion-padding-top">
+          <ion-avatar style="display:inline-block;">
+            <img src="/example-identicon.png">
+          </ion-avatar>
+        </div>
+        <ion-item class="ion-text-center">
+          <ion-label>
+            <h2 class="font-weight-bold">Example User</h2>
+            <p>@ad2dkoaowa</p>
+          </ion-label>
+        </ion-item>
+        <ion-item button class="text-size-small">プロフィールを表示</ion-item>
+        <ion-item button class="text-size-small">フォロー中</ion-item>
+        <ion-item button class="text-size-small">メインプロフィール変更</ion-item>
+      </ion-list>
+    </ion-popover>
   <ion-alert header="バックアップ" sub-header="前回のバックアップから30日以上経過しました" message="OPSTIDのデータはこの端末内のみに保存されています。端末の故障・紛失やデータ消失に備えてバックアップをダウンロードし、クラウドストレージに保存しましょう。この処理により通信が発生することはありません。" :is-open="state.isActive.backupAlert" :buttons="['今はしない','ダウンロード']" translucent></ion-alert>
   </ion-page>
 </template>
@@ -108,7 +129,8 @@ import {
   IonRefresher,
   IonRefresherContent,
   IonChip,
-  IonAlert
+  IonAlert,
+  IonPopover
 } from '@ionic/vue';
 
 import { RefresherCustomEvent } from '@ionic/vue';
@@ -122,7 +144,8 @@ import {
   arrowDown,
   chevronForward,
   pricetagOutline,
-bookmarkOutline
+bookmarkOutline,
+personCircleOutline
 } from "ionicons/icons"
 
 import { reactive } from "vue"

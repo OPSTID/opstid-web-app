@@ -1,62 +1,63 @@
-html, body{
+html,
+body {
     user-select: none;
     overscroll-behavior-x: none;
 }
 
-.container{
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.container-left{
+.container-left {
     display: flex;
     align-items: center;
     justify-content: left;
 }
 
-.content-center{
-    position:absolute;
-    top:0;
-    left:0;
-    bottom:0;
-    right:0;
-    margin:auto;
-    max-height:200px;
+.content-center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    max-height: 200px;
 }
 
-.text-left{
-    text-align:left
+.text-left {
+    text-align: left
 }
 
-.text-center{
-    text-align:center
+.text-center {
+    text-align: center
 }
 
-.text-right{
-    text-align:right
+.text-right {
+    text-align: right
 }
 
-.text-size-small{
-    font-size:0.8em !important;
+.text-size-small {
+    font-size: 0.8em !important;
 }
 
-.text-color-opstid{
-    color:#348ceb !important;
+.text-color-opstid {
+    color: #348ceb !important;
 }
 
-.font-weight-bold{
-    font-weight:bold !important;
+.font-weight-bold {
+    font-weight: bold !important;
 }
 
-.font-weight-normal{
-    font-weight:normal !important;
+.font-weight-normal {
+    font-weight: normal !important;
 }
 
-ion-grid{
-    max-width:750px;
+ion-grid {
+    max-width: 750px;
 }
 
-.markdown-body{
+.markdown-body {
     font-family: "system-ui", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

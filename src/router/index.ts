@@ -11,9 +11,11 @@ import notFoundPage from "../views/not-found.vue"
 
 /* Routes for apps */
 // @docs
-import docsAppRoutes from "../apps/@docs/routes"
+import docsAppRoutes from "@/apps/@docs/routes"
 // @univ-tt
-import univttAppRoutes from "../apps/@univ-tt/routes"
+import univttAppRoutes from "@/apps/@univ-tt/routes"
+// @tags
+import tagsAppRoutes from "@/apps/@tags/routes"
 
 let routes: Array<RouteRecordRaw> = [
   {
@@ -40,8 +42,10 @@ let routes: Array<RouteRecordRaw> = [
 ]
 
 // add apps routes
-routes = routes.concat(docsAppRoutes)
-routes = routes.concat(univttAppRoutes)
+routes = routes
+.concat(docsAppRoutes)
+.concat(univttAppRoutes)
+.concat(tagsAppRoutes)
 
 // add 404 page
 routes.push({ path: '/:catchAll(.*)', component: notFoundPage })

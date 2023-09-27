@@ -17,14 +17,21 @@
             <ion-grid fixed>
                 <ion-list-header class="ion-padding">
                     <ion-label>
-                        <h1 class="font-weight-bold" style="font-size:1.6em">統計の数理 Ⅱ</h1>
+                        <p>月曜日 4時限目</p>
+                        <h1 class="font-weight-bold" style="font-size:1.3em">統計の数理 Ⅱ</h1>
                         <p>本302・ワン</p>
                     </ion-label>
-                    <ion-button id="o-univtt-detail-share-button" style="margin-bottom:0.8em">
+                    <ion-button id="o-univtt-detail-share-button" style="margin-bottom:1.5em">
                         <ion-icon :icon="shareOutline" slot="start"></ion-icon>
                         共有
                     </ion-button>
                 </ion-list-header>
+                <div>
+                    <ion-chip router-link="/@tags/統計の数理Ⅱ">
+                        <ion-icon :icon="bookmarkOutline"></ion-icon>
+                        <ion-label>統計の数理 Ⅱ</ion-label>
+                    </ion-chip>
+                </div>
                 <ion-list>
                     <ion-list-header>課題</ion-list-header>
                     <ion-item>
@@ -110,7 +117,14 @@
                     </ion-item>
                 </ion-list>
                 <p class="text-center">
-                    <ion-button @click="state.linksModal.create.createLink">リンクを作成</ion-button>
+                    <ion-button @click="state.linksModal.currentPage = 'linkList'" fill="outline">
+                        <ion-icon :icon="chevronBack" slot="start"></ion-icon>
+                        戻る
+                    </ion-button>
+                    <ion-button @click="state.linksModal.create.createLink" :disabled="state.linksModal.create.name === '' || state.linksModal.create.url === ''">
+                        リンクを作成
+                        <ion-icon :icon="chevronForward" slot="end"></ion-icon>
+                    </ion-button>
                 </p>
             </ion-content>
         </ion-modal>
@@ -136,9 +150,10 @@ import {
     IonLabel,
     IonModal,
     IonIcon,
-    IonText
+    IonText,
+    IonChip
 } from "@ionic/vue"
-import { addOutline, browsersOutline, chevronBack, chevronForward, chevronUp, chevronUpCircle, chevronUpCircleOutline, create, createOutline, linkOutline, openOutline, pencilOutline, share, shareOutline } from "ionicons/icons";
+import { addOutline, browsersOutline, chevronBack, chevronForward, chevronUp, chevronUpCircle, chevronUpCircleOutline, create, createOutline, linkOutline, openOutline, pencilOutline, share, shareOutline, schoolOutline, bookmarkOutline } from "ionicons/icons";
 
 import { reactive, onMounted, ref } from "vue"
 import oShare from "@/component/share.vue"
