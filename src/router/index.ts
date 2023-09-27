@@ -2,11 +2,12 @@ import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
 
 /* Pages for OPSTID Core */
-import homePage from '../views/HomePage.vue'
-import todoListPage from "../views/to-do-list.vue"
-import settingsPage from '../views/settings.vue'
-import appsPage from "../views/apps.vue"
-import qrReaderPage from "../views/qrReader.vue"
+import homePage from '@/views/HomePage.vue'
+import todoListPage from "@/views/to-do-list.vue"
+import settingsPage from '@/views/settings.vue'
+import appsPage from "@/views/apps.vue"
+import qrReaderPage from "@/views/qrReader.vue"
+import aboutPage from "@/views/about.vue"
 import notFoundPage from "../views/not-found.vue"
 
 /* Routes for apps */
@@ -38,6 +39,10 @@ let routes: Array<RouteRecordRaw> = [
     path: "/qr-reader",
     component:qrReaderPage
   },
+  {
+    path: "/about",
+    component: aboutPage
+  }
   
 ]
 

@@ -28,18 +28,15 @@
                         <ion-icon :icon="cloudOutline" slot="start"></ion-icon>
                         バックアップの管理
                     </ion-item>
-                    <br>
                     <ion-list-header>
                         <ion-label>
-                            <p>OPSTID について</p>
+                            <p>About</p>
                         </ion-label>
                     </ion-list-header>
-                    <ion-item>
+                    <ion-item button router-link="/about">
+                        <ion-icon :icon="informationCircleOutline" slot="start"></ion-icon>
                         <ion-label>
-                            <h2>OPSTID</h2>
-                            <p>V. 0.3 (beta)</p>
-
-                            <router-link to="/term">利用規約</router-link>
+                            OPSTID について
                         </ion-label>
                     </ion-item>
                 </ion-list>
@@ -65,5 +62,5 @@ import {
     IonSelectOption,
     IonIcon
 } from "@ionic/vue"
-import { cloudOutline, languageOutline } from "ionicons/icons";
+import { cloudOutline, informationCircle, informationCircleOutline, languageOutline } from "ionicons/icons";
 </script>

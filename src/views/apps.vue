@@ -10,11 +10,37 @@
         </ion-header>
         <ion-content fullscreen>
             <ion-grid fixed>
-                <h2 class="container-left font-weight-bold ion-padding" style="padding-bottom:0">
+                <h2 class="container-center font-weight-bold ion-padding text-center" style="padding-bottom:0">
                     <img src="/favicon.png" width="48" alt="OPSTID Logo" style="margin-right:0.5em"> Apps
                 </h2>
-                <div class="ion-padding text-size-small">OPSTID は人やものごとをつなぐための様々なアプリの複合体です。<br>それぞれのアプリの情報は <strong>OPSTID タグ</strong> で関連付けることにより「つながり」をもたせることができます。</div>
+                <div class="ion-padding text-size-small ion-text-center">
+                    <ion-text color="medium">
+                        <strong>OPSTID</strong> は人・情報がつながるためのアプリの集合体。
+                        <br>
+                        <strong>OPSTID のアプリ</strong> でつながりをみつけよう。
+                    </ion-text>
+                </div>
+                <div class="ion-text-center text-size-small">
+                    <ion-text color="medium">アプリ開発の目的を明確化するために<strong>開発方針</strong>を定めています</ion-text><br>
+                    <ion-button size="small" fill="clear">
+                        <strong>OPSTID アプリ開発方針</strong>
+                        <ion-icon :icon="chevronForward" slot="end"></ion-icon>
+                    </ion-button>
+                </div>
                 <ion-list lines="none">
+                    <ion-list-header>
+                        <ion-label>
+                            <h1 class="font-weight-bold">Core</h1>
+                            <p class="font-weight-normal">基本アプリ</p>
+                        </ion-label>
+                    </ion-list-header>
+                    <ion-item button>
+                        <ion-icon :icon="bookmarkOutline" slot="start"></ion-icon>
+                        <ion-label class="ion-text-wrap">
+                            <h2 class="font-weight-bold">Tags</h2>
+                            <p>人と情報のつながりをまとめて管理</p>
+                        </ion-label>
+                    </ion-item>
                     <ion-list-header>
                         <ion-label>
                             <h1 class="font-weight-bold">General</h1>
@@ -82,6 +108,7 @@ import {
     IonToolbar,
     IonButtons,
     IonBackButton,
+    IonButton,
     IonTitle,
     IonContent,
     IonGrid,
@@ -89,7 +116,8 @@ import {
     IonListHeader,
     IonItem,
     IonLabel,
-    IonIcon
+    IonIcon,
+    IonText
 } from "@ionic/vue"
-import { bulbOutline, documentOutline, gameControllerOutline, peopleOutline, readerOutline, school } from "ionicons/icons";
+import { bookmarkOutline, bulbOutline, chevronForward, documentOutline, gameControllerOutline, peopleOutline, readerOutline, school } from "ionicons/icons";
 </script>
