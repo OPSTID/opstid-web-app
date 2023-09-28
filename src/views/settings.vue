@@ -18,7 +18,7 @@
                     </ion-list-header>
                     <ion-item>
                         <ion-icon :icon="languageOutline" slot="start"></ion-icon>
-                        <ion-select justify="space-between" label="Language" placeholder="言語">
+                        <ion-select justify="space-between" label="Language" placeholder="言語" interface="popover">
                             <ion-select-option value="en-us">English (en-US)</ion-select-option>
                             <ion-select-option value="ja-jp">日本語 (ja-JP)</ion-select-option>
                             <ion-select-option value="ko-kr">한국어 (ko-KR)</ion-select-option>
