@@ -69,7 +69,7 @@ import {
     toastController
 } from "@ionic/vue"
 import { appsOutline, checkmark, linkOutline, logoInstagram, logoTwitter, qrCodeOutline } from "ionicons/icons";
-import { defineProps, onMounted, reactive, ref } from "vue"
+import { onMounted, reactive, ref } from "vue"
 
 const props = defineProps({
     presentingElement: HTMLElement,

@@ -98,7 +98,10 @@
           </ion-label>
         </ion-item>
         <ion-item button class="text-size-small">プロフィールを表示</ion-item>
-        <ion-item button class="text-size-small">フォロー中</ion-item>
+        <ion-item button class="text-size-small">
+          フォロー中
+          <ion-badge slot="end" color="dark">120</ion-badge>
+        </ion-item>
         <ion-item button class="text-size-small">メインプロフィール変更</ion-item>
       </ion-list>
     </ion-popover>
@@ -130,7 +133,8 @@ import {
   IonRefresherContent,
   IonChip,
   IonAlert,
-  IonPopover
+  IonPopover,
+  IonBadge
 } from '@ionic/vue';
 
 import { RefresherCustomEvent } from '@ionic/vue';

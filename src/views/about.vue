@@ -23,11 +23,20 @@
 
                 <ion-list style="margin-top:1em;">
                     <ion-list-header>
-                        <ion-label class="ion-text-nowrap">
+                        <ion-label class="ion-text-wrap">
                             <h2 class="font-weight-bold">オープンソースライセンス</h2>
                             <p class="font-weight-normal">OPSTID はこれらのオープンソースソフトウェアを使用することにより実現しています。</p>
                         </ion-label>
                     </ion-list-header>
+                    <ion-item v-for="(license, name) in state.licenseData" v-if="state.hasLicenseLoaded">
+                        <ion-label class="ion-text-wrap">
+                            <h2>{{ name }}</h2>
+                            <p>{{ license.licenses }}</p>
+                        </ion-label>
+                    </ion-item>
+                    <p class="ion-text-center" v-if="!state.hasLicenseLoaded">
+                        <ion-button @click="loadLicense" size="small">ライセンス情報を読み込む</ion-button>
+                    </p>
                 </ion-list>
             </ion-grid>
         </ion-content>
@@ -50,4 +59,21 @@ import {
     IonText,
     IonLabel
 } from "@ionic/vue"
+
+import { reactive } from "vue"
+
+const state = reactive({
+    hasLicenseLoaded: false,
+    licenseData:{
+        // for ts error
+        "null":{
+            licenses:[]
+        }
+    }
+})
+
+const loadLicense = async () => {
+    state.licenseData = await (await fetch("/license.json")).json()
+    state.hasLicenseLoaded = true
+}
 </script>

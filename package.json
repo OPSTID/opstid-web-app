@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
+    "license2json":"license-checker --json > public/license.json",
     "preview": "vite preview",
     "test:e2e": "cypress run",
     "test:unit": "vitest",
@@ -23,6 +24,7 @@
     "github-markdown-css": "^5.2.0",
     "ionicons": "^7.0.0",
     "jsqr": "^1.4.0",
+    "license-checker": "^25.0.1",
     "marked": "^9.0.1",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",
