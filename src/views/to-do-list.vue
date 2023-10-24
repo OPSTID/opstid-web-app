@@ -17,6 +17,7 @@
                     </ion-label>
                 </ion-list-header>
                 <ion-item button>
+                    <ion-icon :icon="bulbOutline" slot="start"></ion-icon>
                     <ion-label>
                         <h2>文化祭野外ステージのキーボード出演可否</h2>
                         <p>あと 4 日で回答受付終了</p>
@@ -28,6 +29,7 @@
                     </ion-label>
                 </ion-list-header>
                 <ion-item button>
+                    <ion-icon :icon="schoolOutline" slot="start"></ion-icon>
                     <ion-label>
                         <h2>統計の数理Ⅱ</h2>
                         <p>40 分後に授業開始</p>
@@ -51,6 +53,8 @@ import {
     IonListHeader,
     IonItem,
     IonLabel,
-    IonGrid
+    IonGrid,
+    IonIcon
 } from "@ionic/vue"
+import { schoolOutline, bulbOutline, bulb } from "ionicons/icons";
 </script>

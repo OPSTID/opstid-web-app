@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "license2json":"license-checker --json > public/license.json",
+    "license2json": "license-checker --json > public/license.json",
     "preview": "vite preview",
     "test:e2e": "cypress run",
     "test:unit": "vitest",
@@ -21,17 +21,22 @@
     "@ionic/vue": "^7.0.0",
     "@ionic/vue-router": "^7.0.0",
     "@splidejs/vue-splide": "^0.6.12",
+    "@vueuse/rxjs": "^10.5.0",
+    "dexie": "^3.2.4",
     "github-markdown-css": "^5.2.0",
     "ionicons": "^7.0.0",
+    "jdenticon": "^3.2.0",
     "jsqr": "^1.4.0",
     "license-checker": "^25.0.1",
     "marked": "^9.0.1",
+    "qrcode": "^1.5.3",
+    "rxjs": "^7.8.1",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6",
-    "vue3-touch-events": "^4.1.4"
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@capacitor/cli": "5.3.0",
+    "@types/qrcode": "^1.5.4",
     "@vitejs/plugin-legacy": "^4.0.2",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/eslint-config-typescript": "^11.0.2",
@@ -42,6 +47,7 @@
     "jsdom": "^22.1.0",
     "typescript": "^5.1.6",
     "vite": "^4.3.9",
+    "vite-plugin-pwa": "^0.16.5",
     "vitest": "^0.32.2",
     "vue-tsc": "^1.0.24"
   },

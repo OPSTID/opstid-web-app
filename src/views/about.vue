@@ -34,8 +34,12 @@
                             <p>{{ license.licenses }}</p>
                         </ion-label>
                     </ion-item>
-                    <p class="ion-text-center" v-if="!state.hasLicenseLoaded">
-                        <ion-button @click="loadLicense" size="small">ライセンス情報を読み込む</ion-button>
+                    <p class="ion-text-center ion-padding" v-if="!state.hasLicenseLoaded">
+                        <ion-label class="ion-text-wrap">
+                            <h1 class="font-weight-bold">ライセンス情報</h1>
+                            <p>ライセンス情報はファイルサイズの関係からOPSTID本体に組み込まれていません。[ライセンス情報を表示] をタップするとサーバーからライセンス情報をダウンロードして表示します。</p>
+                        </ion-label>
+                        <ion-button @click="loadLicense" size="small">ライセンス情報を表示</ion-button>
                     </p>
                 </ion-list>
             </ion-grid>

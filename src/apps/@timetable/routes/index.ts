@@ -9,23 +9,23 @@ import pastPage from "../views/past.vue"
 /* define @univ-tt app routes */
 const routes: Array<RouteRecordRaw> = [
     {
-        path: "/@univ-tt/",
+        path: "/@timetable/",
         component: indexPage
     },
     {
-        path: "/@univ-tt/timetable",
+        path: "/@timetable/timetable",
         component: timetablePage
     },
     {
-        path:"/@univ-tt/edit/:day/:period",
+        path:"/@timetable/edit/:day/:period",
         component: editPage
     },
     {
-        path:"/@univ-tt/detail/:day/:period",
+        path:"/@timetable/detail/:day/:period",
         component: detailPage
     },
     {
-        path:"/@univ-tt/past",
+        path:"/@timetable/past",
         component: pastPage
     }
 ]

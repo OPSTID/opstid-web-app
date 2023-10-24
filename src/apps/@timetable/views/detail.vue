@@ -3,37 +3,64 @@
         <ion-header>
             <ion-toolbar>
                 <ion-buttons slot="start">
-                    <ion-back-button default-href="/@univ-tt"></ion-back-button>
+                    <ion-back-button default-href="/@timetable"></ion-back-button>
                 </ion-buttons>
                 <ion-title>授業の詳細</ion-title>
                 <ion-buttons slot="end">
-                    <ion-button router-link="/@univ-tt/edit/1/4">
-                        編集
+                    <ion-button id="o-univtt-detail-share-button" title="この授業を共有">
+                        共有
+                        <ion-icon slot="end" :icon="shareOutline"></ion-icon>
                     </ion-button>
                 </ion-buttons>
             </ion-toolbar>
         </ion-header>
         <ion-content>
             <ion-grid fixed>
-                <ion-list-header class="ion-padding">
+                <ion-list-header class="ion-padding ion-text-center">
                     <ion-label>
                         <p>月曜日 4時限目</p>
                         <h1 class="font-weight-bold" style="font-size:1.3em">統計の数理 Ⅱ</h1>
                         <p>本302・ワン</p>
                     </ion-label>
-                    <ion-button id="o-univtt-detail-share-button" style="margin-bottom:1.5em">
-                        <ion-icon :icon="shareOutline" slot="start"></ion-icon>
-                        共有
-                    </ion-button>
                 </ion-list-header>
-                <div>
-                    <ion-chip router-link="/@tags/統計の数理Ⅱ">
-                        <ion-icon :icon="bookmarkOutline"></ion-icon>
-                        <ion-label>統計の数理 Ⅱ</ion-label>
-                    </ion-chip>
-                </div>
+
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="6">
+                            <ion-button router-link="/@timetable/edit/1/4" expand="block">
+                                <ion-icon :icon="createOutline" slot="start"></ion-icon>
+                                編集
+                            </ion-button>
+                        </ion-col>
+                        <ion-col size="6">
+                            <ion-button expand="block" fill="outline">
+                                <ion-icon :icon="documentOutline" slot="start"></ion-icon>
+                                授業メモを取る
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
                 <ion-list>
-                    <ion-list-header>課題</ion-list-header>
+                    <ion-list-header>
+                        <ion-label>
+                            <h1 class="font-weight-bold">Tags</h1>
+                            <p>つながりをみつけよう</p>
+                        </ion-label>
+                        <ion-button style="margin-bottom:1em;">追加</ion-button>
+                    </ion-list-header>
+                    <ion-item lines="none">
+                        <ion-chip router-link="/@tags/統計の数理Ⅱ">
+                            <ion-icon :icon="bookmarkOutline"></ion-icon>
+                            <ion-label>統計の数理 Ⅱ</ion-label>
+                        </ion-chip>
+                    </ion-item>
+                    <ion-list-header>
+                        <ion-label>課題</ion-label>
+                        <ion-button>
+                            課題を追加
+                            <ion-icon :icon="chevronForward" slot="end"></ion-icon>
+                        </ion-button>
+                    </ion-list-header>
                     <ion-item>
                         <ion-label>
                             <h2>教科書P132-133</h2>
@@ -117,18 +144,15 @@
                     </ion-item>
                 </ion-list>
                 <p class="text-center">
-                    <ion-button @click="state.linksModal.currentPage = 'linkList'" fill="outline">
-                        <ion-icon :icon="chevronBack" slot="start"></ion-icon>
-                        戻る
-                    </ion-button>
-                    <ion-button @click="state.linksModal.create.createLink" :disabled="state.linksModal.create.name === '' || state.linksModal.create.url === ''">
+                    <ion-button @click="state.linksModal.create.createLink"
+                        :disabled="state.linksModal.create.name === '' || state.linksModal.create.url === ''">
                         リンクを作成
                         <ion-icon :icon="chevronForward" slot="end"></ion-icon>
                     </ion-button>
                 </p>
             </ion-content>
         </ion-modal>
-        <o-share trigger="o-univtt-detail-share-button" app-name="大学生の時間割" title="この授業を共有" path="/@univ-tt/add-class/"
+        <o-share trigger="o-univtt-detail-share-button" app-name="Timetable" title="この授業を共有" path="/@timetable/add-class/"
             :presenting-element="state.linksModal.presentingElement!"></o-share>
     </ion-page>
 </template>
@@ -143,6 +167,8 @@ import {
     IonTitle,
     IonContent,
     IonGrid,
+    IonRow,
+    IonCol,
     IonList,
     IonListHeader,
     IonItem,
@@ -153,10 +179,10 @@ import {
     IonText,
     IonChip
 } from "@ionic/vue"
-import { addOutline, browsersOutline, chevronBack, chevronForward, chevronUp, chevronUpCircle, chevronUpCircleOutline, create, createOutline, linkOutline, openOutline, pencilOutline, share, shareOutline, schoolOutline, bookmarkOutline } from "ionicons/icons";
+import { addOutline, browsersOutline, chevronBack, chevronForward, chevronUp, chevronUpCircle, chevronUpCircleOutline, create, createOutline, linkOutline, openOutline, pencilOutline, share, shareOutline, schoolOutline, bookmarkOutline, documentOutline } from "ionicons/icons";
 
 import { reactive, onMounted, ref } from "vue"
-import oShare from "@/component/share.vue"
+import oShare from "@/component/shareModal.vue"
 
 // create page ref
 const page = ref()

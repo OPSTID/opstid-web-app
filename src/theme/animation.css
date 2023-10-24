@@ -1,0 +1,29 @@
+@keyframes o-animation-slide-in-right {
+    from {
+        transform:translateX(50px);
+        opacity:0.1
+    }
+    to{
+        transform:translateX(0px);
+        opacity:1
+    }
+}
+.o-animation-slide-in-right{
+    animation-name: o-animation-slide-in-right;
+    animation-duration: 0.3s
+}
+
+@keyframes o-animation-slide-in-left {
+    from {
+        transform:translateX(-50px);
+        opacity:0.1
+    }
+    to{
+        transform:translateX(0px);
+        opacity:1
+    }
+}
+.o-animation-slide-in-left{
+    animation-name: o-animation-slide-in-left;
+    animation-duration: 0.3s
+}

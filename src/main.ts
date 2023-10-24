@@ -24,10 +24,11 @@ import '@ionic/vue/css/display.css';
 import "github-markdown-css/github-markdown.css"
 
 /* Theme variables */
-import './theme/variables.css';
+import '@/theme/variables.css';
 
 /* Import Customized CSS */
-import "./theme/app.css"
+import "@/theme/app.css"
+import "@/theme/animation.css"
 
 /* Import Custom lib */
 import ionToolbarResponsive from './lib/ion-toolbar-responsive';
@@ -39,7 +40,9 @@ const app = createApp(App)
   .use(router)
   
 router.isReady().then(() => {
-  app.mount('#app');
+  setTimeout(() => {
+    app.mount('#app');
+  },800)
 });
 
 // run ion toolbar responsive

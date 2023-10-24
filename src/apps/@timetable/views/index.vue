@@ -5,11 +5,16 @@
                 <ion-buttons slot="start">
                     <ion-back-button default-href="/"></ion-back-button>
                 </ion-buttons>
-                <ion-title>大学生の時間割</ion-title>
+                <ion-title>Timetable</ion-title>
             </ion-toolbar>
         </ion-header>
         <ion-content fullscreen>
             <ion-grid fixed>
+                <ion-header collapse="condense">
+                    <ion-toolbar>
+                        <ion-title size="large">Timetable</ion-title>
+                    </ion-toolbar>
+                </ion-header>
                 <ion-card class="o-univtt-current-class">
                     <ion-card-header>
                         <ion-card-title style="font-size:1.6em">統計の数理 Ⅱ</ion-card-title>
@@ -19,7 +24,7 @@
                     <ion-grid>
                         <ion-row>
                             <ion-col size="12" size-md="8" offset-md="2">
-                                <ion-button expand="block" router-link="/@univ-tt/detail/1/4">
+                                <ion-button expand="block" router-link="/@timetable/detail/1/4">
                                     <ion-icon :icon="school" slot="start"></ion-icon>
                                     詳細を確認
                                 </ion-button>
@@ -27,7 +32,7 @@
                         </ion-row>
                     </ion-grid>
                 </ion-card>
-                <ion-button expand="block" fill="clear" size="small" router-link="/@univ-tt/timetable">
+                <ion-button expand="block" fill="clear" size="small" router-link="/@timetable/timetable">
                     <ion-icon :icon="gridOutline" slot="start"></ion-icon>
                     <strong style="font-size:1.2em">時間割を確認・編集</strong>
                 </ion-button>
